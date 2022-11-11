@@ -7,7 +7,7 @@ var settings = {
     duration: 2.5, // particle duration in sec
     velocity: 136, // particle velocity in pixels/sec
     effect: -0.95, // play with this for a nice effect
-    size: 13, // particle size in pixels
+    size: 14, // particle size in pixels
   },
 };
 
@@ -258,8 +258,8 @@ var ParticlePool = (function () {
 
   // handle (re-)sizing of the canvas
   function onResize() {
-    canvas.width = canvas.clientWidth + 200;
-    canvas.height = canvas.clientHeight + 200;
+    canvas.width = canvas.clientWidth * 2;
+    canvas.height = canvas.clientHeight * 2;
   }
   window.onresize = onResize;
 
@@ -267,5 +267,5 @@ var ParticlePool = (function () {
   setTimeout(function () {
     onResize();
     render();
-  }, 10);
+  }, 100);
 })(document.getElementById("pinkboard"));
